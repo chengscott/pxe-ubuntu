@@ -1,4 +1,4 @@
-# pxe-bionic
+# pxe-ubuntu
 
 ## Run
 
@@ -10,7 +10,7 @@
 $ docker run --name tftp-server --rm -p 69:69/udp -v pxe:/var/tftpboot chengscott/tftp-server
 ```
 
-## Ubuntu Bionic PXE
+## Ubuntu PXE
 
 - Directory structure
 
@@ -35,9 +35,9 @@ wget $MIRROR/installer-amd64/current/images/hwe-netboot/ubuntu-installer/amd64/{
 
 2. Prepare `grub.cfg`
 
-> Due to netboot, `netcfg/` must be set outside of preseed.
+> Due to netboot, the preseed options `netcfg/` must be set outside.
 
-3. Prepare preseed (`my_ubuntu.cfg`)
+3. Prepare preseed (`my_ubuntu.seed`)
 
 > one can generate password conform to [crypt (3)](https://man7.org/linux/man-pages/man3/crypt.3.html) format.
 > `openssl passwd -6 -salt some_random_salt`
